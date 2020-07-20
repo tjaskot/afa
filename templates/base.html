@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- base.html - all htm files with navbar will import this file -->
+<html>
+  <head>
+    {% block head %}
+      <!-- Vendor Dependencies - CSS -->
+      <link rel="stylesheet" href={{ url_for('static', filename='css/bootstrap.min.css') }} />
+<!--      <link rel="stylesheet" href={{ url_for('static', filename='css/fontawesomeall.min.css') }} />-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- User Defined CSS -->
+      <link rel="stylesheet" href={{ url_for('static', filename='css/common.css') }} />
+      <!-- Favicon Image -->
+      <link rel="shortcut icon" href={{ url_for('static', filename='images/favicon.png') }} />
+    {% endblock %}
+  </head>
+
+  <header>
+    {% block header %}
+      <span class="menuToggle" onclick="openNav()">&#9776;</span>
+      <title>Em's Flower Shop Website</title>
+      <div class="jumbotron bkgw">
+        <h2 class="display-4">Em's Flower Shop</h2>
+        <p class="lead">This site is designed to show photos and creations by Em.</p>
+        <a class="btn btn-info btn-rounded btn-sm" href="#" role="button" onclick="openNav()">Learn More</a>
+        <hr class="my-4">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-twitter"></a>          
+          <a href="#" class="fa fa-linkedin"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-pinterest"></a>
+          <a href="#" class="fa fa-snapchat-ghost"></a>
+      </div>
+    {% endblock %}
+  </header>
+
+  {% block basenavbar %}
+    <div class="sideNavBar" id="sideNavBar">
+      <a href="javascript:void(0)" class="closeBtn" onclick="closeNav()">&times;</a>
+      <a id="sideHomeLi" href="/home">Home</a>
+      <a href="/home#probstmnt">Project Overview</a>
+      <a href="/home#appbkgnd">Application Background</a>
+      <a href="/home#anlaprch">Model Approach</a>
+      <a id="sideContactsLi" href="/contacts">Team</a>
+      <a id="sideGenerateLi" href="/generate">Generate</a>
+      <a id="sideAboutLi" href="/about">About</a>
+    </div>
+
+    <ul class="topNavBar" id="topNavBar">
+      <li><a id="homeLi" href="/home">Home</a></li>
+      <li><a href="/home#probstmnt">Project Overview</a></li>
+      <li><a href="/home#appbkgnd">Application Background</a></li>
+      <li><a href="/home#anlaprch">Model Approach</a></li>
+      <li><a id="contactsLi" href="/contacts">Team</a></li>
+      <li><a id="generateLi" href="/generate">Generate</a></li>
+      <li><a id="aboutLi" href="/about">About</a></li>
+    </ul>
+
+    <script>
+      if (window.matchMedia("(max-width: 719px)") === true) {
+        window.onload = function() {addActive({{ navBarEl }})};
+        console.log("add Side active");
+      } else {
+        window.onload = function() {addActive({{ sideBarEl }})};
+        <!--console.log("add Top active");-->
+      }
+    </script>
+  {% endblock %}
+
+  <body>
+    {% block body %}
+    {% endblock %}
+  </body>
+
+  <footer>
+    {% block footer %}
+    {% endblock %}
+  </footer>
+
+  {% block basescripts %}
+    <!-- Vendor Dependencies - JS -->
+    <script type="text/javascript" src={{ url_for('static', filename='js/jquery.min.js') }}></script>
+    <script type="text/javascript" src={{ url_for('static', filename='js/bootstrap.min.js') }}></script>
+<!--    <script type="text/javascript" src={{ url_for('static', filename='js/fontawesomeall.min.js') }}></script>-->
+    <!-- TODO: Maybe need this ajaz popper -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script> -->
+    <!-- D3.js -->
+    <script type="text/javascript" src={{ url_for('static', filename='js/d3.min.js') }}></script>
+    <!-- User Defined Scripts -->
+    <script type="text/javascript" src={{ url_for('static', filename='js/common.js') }}></script>
+  {% endblock %}
+</html>

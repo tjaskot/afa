@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<!-- contacts.html -->
+{% block head %}
+  {{ super() }}
+  <!-- File Specific CSS -->
+  <link rel="stylesheet" href={{ url_for('static', filename='css/contacts.css') }}>
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+{% endblock %}
+
+<!-- Navigation bar -->
+{% block basenavbar %}
+  {{ super() }}
+{% endblock %}
+<!-- end of navbar -->
+
+{% block body %}
+<!--TODO: <body background="../static/images/dasacearmy.png" class="doapng" alt="Doa Watermark">-->
+  <h2 class="container">Points of Contact for this Project</h2>
+  <section class="bkgw flex-container">
+    <div class="card">
+      <img class="fwid" src={{ url_for('static', filename='images/img_avatar_f.png')}} />
+      <div class="container">
+        <h4><b>Em</b></h4>
+        <p>Idea Person and Designer</p>
+      </div>
+    </div>
+    <div class="card">
+      <img class="fwid" src={{ url_for('static', filename='images/img_avatar_m.png')}} />
+      <div class="container">
+        <h4><b>Trevor</b></h4>
+        <p>Software Dev</p>
+      </div>
+    </div>
+    <div class="navOffCntr">
+      <p class="cmargin">{{ poc1 }}</p>
+      <p class="cmargin">{{ poc2 }}</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+{% endblock %}
+
+{% block basecripts %}
+  {{ super() }}
+  <!-- File Specific Scripts -->
+  <script type="text/javascript" src={{ url_for('static', filename='js/contacts.js') }}></script>
+{% endblock %}

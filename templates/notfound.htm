@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<!-- notfound.html -->
+{% block head %}
+  {{ super() }}
+  <!-- File Specific CSS -->
+  <link rel="stylesheet" href={{ url_for('static', filename='css/notfound.css')}} />
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  <title>PageNotFound</title>
+{% endblock %}
+
+<!-- This is the navigation bar -->
+{% block basenavbar %}
+  {{ super() }}
+{% endblock %}
+<!-- end of navbar -->
+
+{% block body %}
+  <article>
+    <p>Something went awry, please try again. If situation persists, please contact system administrator.</p>
+  </article>
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+{% endblock %}
+
+{% block basescripts %}
+  {{ super() }}
+  <script type="text/javascript" src={{ url_for('static', filename='js/notfound.js') }}></script>
+{% endblock %}

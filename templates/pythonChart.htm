@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends base.html %}
+<!-- generate.html -->
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href={{ url_for('static', filename='css/about.css') }} />
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+{% endblock %}
+
+{% block basenavbar %}
+  {{ super() }}
+{% endblock %}
+
+{% block body %}
+  {{ super() }}
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+{% endblock %}
+
+{%block basescripts %}
+  {{ super() }}
+  <script type="text/javascript" src={{ url_for('static', filename='js/pythonChart.js') }}></script>
+{% endblock %}

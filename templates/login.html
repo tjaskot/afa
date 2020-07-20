@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<!-- login.html -->
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href={{ url_for('static', filename='css/login.css') }}>
+{% endblock %}
+
+{% if error %}
+<p class="bkgw error"><strong>Error:</strong> {{ error }} </p>
+{% endif %}
+
+<!-- This is the navigation bar -->
+{% block basenavbar %}
+  <!-- Blank Overwrite - Login Only -->
+{% endblock %}
+<!-- end of navbar -->
+
+{% block header %}
+  <!-- Blank Overwrite - Login Only -->
+{% endblock %}
+
+{% block body %}
+  <form action="/login" method="POST">
+    <div id="loginpost" class="usrlogn">
+	    <input type="username" name="username" placeholder="Username" value="{{ request.form.username }}">
+	    </br>
+	    <input type="password" name="password" placeholder="Password" value="{{ request.form.password }}">
+	    </br>
+	    <input type="submit" value="Login">
+    </div>
+  </form>
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+{% endblock %}
+
+{% block basescripts %}
+  {{ super() }}
+  <script type="text/javascript" src={{ url_for('static', filename='js/login.js') }}></script>
+{% endblock %}
