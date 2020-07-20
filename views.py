@@ -43,9 +43,9 @@ def contacts():
         recipient = [requestor]
         cc = ['trevor186@msn.com']
         bcc = []
-        sender = 'myFlowerShop@outlook.com'
+        sender = 'trevor186@msn.com'
         msg = MIMMultipart('alternative')
-        msg['Subject'] = 'Flower Info Request'
+        msg['Subject'] = 'Website Request'
         msg['From'] = sender
         msg['To'] = ",".join(recipient)
         msg['CC'] = ",".join(cc)
@@ -65,7 +65,7 @@ def contacts():
         html = str(email_body_header) + str(email_body_content) + str(email_body_footer)
         part = MIMEText(html, 'html')
         msg.attach(part)
-        s = smtplib.SMTP('mailhost.flowershop.com')
+        s = smtplib.SMTP('mailhost.afa.com')
         s.sendmail(sender, recipient, msg.as_string())
         s.quit()
 

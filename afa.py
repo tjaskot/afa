@@ -37,11 +37,11 @@ import variables
 #   app start
 ###########################
 
-#TODO: move to folder EmFlowersLLC, rn using just app
+#TODO: move to folder AFA, rn using just app
 app = Flask(__name__, instance_relative_config=True)
 
-# Define User Specific Variables - EmFlowersLLC package
-appName = "EmFlowersLLC Website"
+# Define User Specific Variables - AFA package
+appName = "AFA Website"
 
 # App Configs
 if not os.environ.get('SECRET_KEY') and 'production' not in os.environ:
@@ -234,7 +234,7 @@ with app.test_request_context('/datafunction'):
     assert request.path == '/datafunction'
 #######################################
 
-#   This file is being used as both main.py and EmFlowersLLC.py and some overlap in init.py
+#   This file is being used as both main.py and AFA.py and some overlap in init.py
 if __name__ == "__main__":
 #    manager.run()
     db.create_all()

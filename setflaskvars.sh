@@ -1,7 +1,7 @@
 #!/bin/bash
 read -p "Quick export? " qe
 if [[ $qe == 'y' ]]; then
-	export FLASK_APP='emflowersllc.py'
+	export FLASK_APP='afa.py'
 	export FLASK_DEBUG=0
 	export FLASK_ENV=Development
 	flask run
