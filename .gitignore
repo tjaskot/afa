@@ -1,0 +1,19 @@
+# Don't track content of these folders
+__pycache__
+bin/
+lib/
+env/
+env/*
+env/**/*
+pyvenv.cfg
+
+# Compiled Source #
+###################
+# Jupyter
+etc/
+share/
+share/*
+share/**/*
+
+# Packages #
+############
